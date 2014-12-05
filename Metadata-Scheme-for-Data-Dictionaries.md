@@ -1,10 +1,10 @@
-->**Metadata Schema for Data Dictionaries**<-
+# Metadata Schema for Data Dictionaries
 
 SCOPE Metadata Group
 
 April 9, 2014
 
-Background:
+### Background
 
 The SCOPE (Statistical Community of Practice and Engagement) project was initiated in 2009 as an inter-agency effort to consolidate resources and practices across the major US federal statistical agencies. A team focused on metadata was initiated in 2013. The effort described here is part of the team's deliverables.
 
@@ -12,7 +12,7 @@ Parallel with SCOPE, the White House began an effort to make federal government 
 
 One element in the set of descriptors for a data set is a pointer to a data dictionary, if applicable. This specification is an effort to define the elements needed to describe the contents of a data dictionary.
 
-Membership:
+### Membership
 
 + Dan Gillman (BLS) – chair
 
@@ -33,7 +33,6 @@ Membership:
 + Kimberly Noonan (NSF)
 
 + Bill Savino (Census)
-
 + Marilyn Seastrom (NCES)
 
 + Joy Sharp (BTS)
@@ -44,11 +43,11 @@ Membership:
 
 + Michael Valivullah (NASS)
 
-Usage:
+### Usage
 
 In this specification, dimensions for cross-tabulated data are treated as variables. Many other standards and specifications for describing data, such as DDI and SDMX, treat dimensions as separate objects. This decision was made to keep the number of elements to a minimum.
 
-Notes:
+### Notes
 
 1) An entry in a data dictionary is a description of a variable.
 2) A **Value Domain** is a set of allowed values for a variable.
@@ -56,7 +55,7 @@ Notes:
 4) All the fields specified below are assumed to be text for human readability. Interoperability and use by automated tools requires new considerations beyond the scope of this document.
 5) Examples are included at the end of this document.
 
-**Definitions**:
+### Definitions 
 
 The definitions below are given to ensure unambiguous interpretation of this specification.
 
@@ -78,7 +77,7 @@ The definitions below are given to ensure unambiguous interpretation of this spe
 
 
 
-**Required Fields**
+## Required Fields
 
 
 
@@ -92,7 +91,7 @@ The definitions below are given to ensure unambiguous interpretation of this spe
 | Type of Value Domain | The kind of value domainMultiplicity [1..1] | Value domains come in 2 types:  **Enumerated** – allowed values are specified as a list using the Permissible Value field below.  **Described** – allowed values are specified in a rule or expression using the Description field below |
 | Datatype | Allowed computations (i.e., the computational model) for data under this variableMultiplicity [1..1] | In statistics, the allowed families of datatypes are Text, Nominal, Ordinal, Interval, and Ratio. Additional datatypes may be required to specify other data. |
 
-**Required-if-Applicable Fields**
+## Required-if-Applicable Fields
 
 | **Field** | **Definition** | **Usage Comments** |
 | --- | --- | --- |
@@ -105,25 +104,23 @@ The definitions below are given to ensure unambiguous interpretation of this spe
 | Sub-Dimension | A dimension that is a further refinement of another dimensionMultiplicity [0..1] | Used in the description of a dimensional variable that is used as a sub-dimension. Value in this field is the name (a reference) to the related parent dimension.Counties in the US are a sub-dimension of the states. Each level of a hierarchical classification (e.g., NAICS) is a sub-dimension of the level above. |
 | Statistic | Particular statistic a derived or cross-tabulated variable representsMultiplicity [0..1] | A mean (or average) is derived from other data. This is a statistic. This element only applies to derived or cross-tabulated variables. Even some derived variables do not represent statistics, such as classifications whose values are based on combinations of others. In statistics, these are called re-codes. |
 
-**Examples of Describing Variables**
-
+## Examples of Describing Variables
 
 
 Here are 4 variables described as if they are in a microdata file:
 
-1) a. Name – sex
-  b. Definition – Sex of a person
-  c. Universe – US people in 2014
-  d. Type – basic
-  e. Value domain
-    i. Name – sex codes
-    ii. Type – enumerated
-    iii. Permissible values
-      1. <m, Male sex>
-      2. <f, Female sex>
-      3. <o, Other – unspecified>
-
-    iv. Datatype – nominal 
+    1) a. Name – sex
+       b. Definition – Sex of a person
+       c. Universe – US people in 2014
+       d. Type – basic
+       e. Value domain
+         i. Name – sex codes
+         ii. Type – enumerated
+         iii. Permissible values
+           1. <m, Male sex>
+           2. <f, Female sex>
+           3. <o, Other – unspecified>
+         iv. Datatype – nominal 
 
 2) a. Name – state
   b. Definition – state of residence of person
