@@ -36,11 +36,11 @@ In this specification, dimensions for cross-tabulated data are treated as variab
 
 ### Notes
 
-1) An entry in a data dictionary is a description of a variable.
-2) A **Value Domain** is a set of allowed values for a variable.
-3) Multiplicity tells the reader of this document how many instances of a particular element are allowed in each entry.
-4) All the fields specified below are assumed to be text for human readability. Interoperability and use by automated tools requires new considerations beyond the scope of this document.
-5) Examples are included at the end of this document.
+1. An entry in a data dictionary is a description of a variable.
+2. A **Value Domain** is a set of allowed values for a variable.
+3. Multiplicity tells the reader of this document how many instances of a particular element are allowed in each entry.
+4. All the fields specified below are assumed to be text for human readability. Interoperability and use by automated tools requires new considerations beyond the scope of this document.
+5. Examples are included at the end of this document.
 
 ### Definitions 
 
@@ -70,26 +70,26 @@ The definitions below are given to ensure unambiguous interpretation of this spe
 
 | **Field** | **Definition** | **Usage Comments** |
 | --- | --- | --- |
-| Identifier | Globally unique identifier for each data dictionary entryMultiplicity [1..1] | Given the current emphasis on linked open data, this identifier should be a URI.A data dictionary entry is a description of a variable. |
-| Name of Variable | Linguistic expression designating the entryMultiplicity [1..N] | More than one name for a data dictionary entry is permitted. |
-| Definition of Variable | Representation of the meaning of a variable by a textual description used to convey its meaning Multiplicity [1..1] | Multiple definitions are permitted if they are in different languages. The assumption is one definition per language. |
-| Type of Variable | The kind of entry providedMultiplicity [1..1] | The allowed values are: Basic, Cross-tabulated, Derived, and Dimensional. |
-| Name of Value Domain | Linguistic expression designating the value domainMultiplicity [1..N] | More than one name is permitted for a value domain. |
-| Type of Value Domain | The kind of value domainMultiplicity [1..1] | Value domains come in 2 types:  **Enumerated** – allowed values are specified as a list using the Permissible Value field below.  **Described** – allowed values are specified in a rule or expression using the Description field below |
+| Identifier | Globally unique identifier for each data dictionary entry.  Multiplicity [1..1] | Given the current emphasis on linked open data, this identifier should be a URI.A data dictionary entry is a description of a variable. |
+| Name of Variable | Linguistic expression designating the entry.  Multiplicity [1..N] | More than one name for a data dictionary entry is permitted. |
+| Definition of Variable | Representation of the meaning of a variable by a textual description used to convey its meaning.   Multiplicity [1..1] | Multiple definitions are permitted if they are in different languages. The assumption is one definition per language. |
+| Type of Variable | The kind of entry provided.  Multiplicity [1..1] | The allowed values are: Basic, Cross-tabulated, Derived, and Dimensional. |
+| Name of Value Domain | Linguistic expression designating the value domain.  Multiplicity [1..N] | More than one name is permitted for a value domain. |
+| Type of Value Domain | The kind of value domain.  Multiplicity [1..1] | Value domains come in 2 types:  **Enumerated** – allowed values are specified as a list using the Permissible Value field below.  **Described** – allowed values are specified in a rule or expression using the Description field below |
 | Datatype | Allowed computations (i.e., the computational model) for data under this variableMultiplicity [1..1] | In statistics, the allowed families of datatypes are Text, Nominal, Ordinal, Interval, and Ratio. Additional datatypes may be required to specify other data. |
 
 ## Required-if-Applicable Fields
 
 | **Field** | **Definition** | **Usage Comments** |
 | --- | --- | --- |
-| Universe | The total membership of a defined class of people, objects, or events Multiplicity [0..1] | This is not applicable to Dimensional variables. It is required otherwise. All adult persons in the US is an example of a universe. |
+| Universe | The total membership of a defined class of people, objects, or events.  Multiplicity [0..1] | This is not applicable to Dimensional variables. It is required otherwise. All adult persons in the US is an example of a universe. |
 | Permissible Value | Pair consisting of a designation and meaning; and one of the allowed values for a variableMultiplicity [0..N] | Used for Enumerated type Value Domains – The pair <M, male> might be a way to express the idea that the letter M is used to denote the male sex. The word "male" contains the meaning associated with the usage of the letter "M" in some database entry. In this sense, it is a permissible value. |
-| Description | Rule or expression for specifying permissible valuesMultiplicity [0..1] | Used for Described type Value Domains – The description might be the set of real numbers between 0 and 1 in Arabic numerals. This choice is taken when listing the allowed values is not feasible, helpful, or instructive to list them individually. |
-| Unit of Measure | Units used to quantify valuesMultiplicity [0..1] | Degrees Celsius is a unit of measure for temperature. Miles per hour is a unit of measure for speed. |
-| Precision | Smallest unit in which numeric data are reportedMultiplicity [0..1] | Temperatures measured to the nearest one hundredth of a degree have a precision of hundredths. Temperatures measured to the nearest whole degree have a precision of units. |
-| Dimensions | List of names of dimensions for cross-tabulated variablesMultiplicity [0..N] | This element is used only in the description of cross-tabulated variables. Used to name (i.e., reference) the description of a dimensional variable. See Type of Variable field. |
-| Sub-Dimension | A dimension that is a further refinement of another dimensionMultiplicity [0..1] | Used in the description of a dimensional variable that is used as a sub-dimension. Value in this field is the name (a reference) to the related parent dimension.Counties in the US are a sub-dimension of the states. Each level of a hierarchical classification (e.g., NAICS) is a sub-dimension of the level above. |
-| Statistic | Particular statistic a derived or cross-tabulated variable representsMultiplicity [0..1] | A mean (or average) is derived from other data. This is a statistic. This element only applies to derived or cross-tabulated variables. Even some derived variables do not represent statistics, such as classifications whose values are based on combinations of others. In statistics, these are called re-codes. |
+| Description | Rule or expression for specifying permissible values.  Multiplicity [0..1] | Used for Described type Value Domains – The description might be the set of real numbers between 0 and 1 in Arabic numerals. This choice is taken when listing the allowed values is not feasible, helpful, or instructive to list them individually. |
+| Unit of Measure | Units used to quantify values.  Multiplicity [0..1] | Degrees Celsius is a unit of measure for temperature. Miles per hour is a unit of measure for speed. |
+| Precision | Smallest unit in which numeric data are reported.  Multiplicity [0..1] | Temperatures measured to the nearest one hundredth of a degree have a precision of hundredths. Temperatures measured to the nearest whole degree have a precision of units. |
+| Dimensions | List of names of dimensions for cross-tabulated variables.  Multiplicity [0..N] | This element is used only in the description of cross-tabulated variables. Used to name (i.e., reference) the description of a dimensional variable. See Type of Variable field. |
+| Sub-Dimension | A dimension that is a further refinement of another dimension.  Multiplicity [0..1] | Used in the description of a dimensional variable that is used as a sub-dimension. Value in this field is the name (a reference) to the related parent dimension.  Counties in the US are a sub-dimension of the states. Each level of a hierarchical classification (e.g., NAICS) is a sub-dimension of the level above. |
+| Statistic | Particular statistic a derived or cross-tabulated variable represents.  Multiplicity [0..1] | A mean (or average) is derived from other data. This is a statistic. This element only applies to derived or cross-tabulated variables. Even some derived variables do not represent statistics, such as classifications whose values are based on combinations of others. In statistics, these are called re-codes. |
 
 ## Examples of Describing Variables
 
