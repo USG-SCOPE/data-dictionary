@@ -76,14 +76,14 @@ The definitions below are given to ensure unambiguous interpretation of this spe
 | Type of Variable | The kind of entry provided.  Multiplicity [1..1] | The allowed values are: Basic, Cross-tabulated, Derived, and Dimensional. |
 | Name of Value Domain | Linguistic expression designating the value domain.  Multiplicity [1..N] | More than one name is permitted for a value domain. |
 | Type of Value Domain | The kind of value domain.  Multiplicity [1..1] | Value domains come in 2 types:  **Enumerated** – allowed values are specified as a list using the Permissible Value field below.  **Described** – allowed values are specified in a rule or expression using the Description field below |
-| Datatype | Allowed computations (i.e., the computational model) for data under this variableMultiplicity [1..1] | In statistics, the allowed families of datatypes are Text, Nominal, Ordinal, Interval, and Ratio. Additional datatypes may be required to specify other data. |
+| Datatype | Allowed computations (i.e., the computational model) for data under this variable.  Multiplicity [1..1] | In statistics, the allowed families of datatypes are Text, Nominal, Ordinal, Interval, and Ratio. Additional datatypes may be required to specify other data. |
 
 ## Required-if-Applicable Fields
 
 | **Field** | **Definition** | **Usage Comments** |
 | --- | --- | --- |
 | Universe | The total membership of a defined class of people, objects, or events.  Multiplicity [0..1] | This is not applicable to Dimensional variables. It is required otherwise. All adult persons in the US is an example of a universe. |
-| Permissible Value | Pair consisting of a designation and meaning; and one of the allowed values for a variableMultiplicity [0..N] | Used for Enumerated type Value Domains – The pair <M, male> might be a way to express the idea that the letter M is used to denote the male sex. The word "male" contains the meaning associated with the usage of the letter "M" in some database entry. In this sense, it is a permissible value. |
+| Permissible Value | Pair consisting of a designation and meaning; and one of the allowed values for a variable.  Multiplicity [0..N] | Used for Enumerated type Value Domains – The pair <M, male> might be a way to express the idea that the letter M is used to denote the male sex. The word "male" contains the meaning associated with the usage of the letter "M" in some database entry. In this sense, it is a permissible value. |
 | Description | Rule or expression for specifying permissible values.  Multiplicity [0..1] | Used for Described type Value Domains – The description might be the set of real numbers between 0 and 1 in Arabic numerals. This choice is taken when listing the allowed values is not feasible, helpful, or instructive to list them individually. |
 | Unit of Measure | Units used to quantify values.  Multiplicity [0..1] | Degrees Celsius is a unit of measure for temperature. Miles per hour is a unit of measure for speed. |
 | Precision | Smallest unit in which numeric data are reported.  Multiplicity [0..1] | Temperatures measured to the nearest one hundredth of a degree have a precision of hundredths. Temperatures measured to the nearest whole degree have a precision of units. |
