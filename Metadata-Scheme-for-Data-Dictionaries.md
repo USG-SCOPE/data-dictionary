@@ -15,32 +15,19 @@ One element in the set of descriptors for a data set is a pointer to a data dict
 ### Membership
 
 + Dan Gillman (BLS) – chair
-
 + Paul Bugg (OMB)
-
 + San Cannon (FRB)
-
 + Joe Dalaker (Census)
-
 + Mark Elbert (EIA)
-
 + Tim Kearley (BJS)
-
 + Peter Meyer (BLS)
-
 + Mary Moulton (BTS)
-
 + Kimberly Noonan (NSF)
-
 + Bill Savino (Census)
 + Marilyn Seastrom (NCES)
-
 + Joy Sharp (BTS)
-
 + Ann Summa (NASS)
-
 + Bruce Taylor (NCES)
-
 + Michael Valivullah (NASS)
 
 ### Usage
@@ -122,105 +109,94 @@ Here are 4 variables described as if they are in a microdata file:
            3. <o, Other – unspecified>
          iv. Datatype – nominal 
 
-2) a. Name – state
-  b. Definition – state of residence of person
-  c. Universe – US people in 2014
-  d. Type – basic 
-  e. Value domain
-    i. Name – postal state codes
-    ii. Type – enumerated
-    iii. Permissible values
-      1. <AL, state of Alabama>
-      2. <AK, state of Alaska>
-      3. …
+    2) a. Name – state
+       b. Definition – state of residence of person
+       c. Universe – US people in 2014
+       d. Type – basic 
+       e. Value domain
+         i. Name – postal state codes
+         ii. Type – enumerated
+         iii. Permissible values
+           1. <AL, state of Alabama>
+           2. <AK, state of Alaska>
+           3. …
+         iv. Datatype – nominal 
 
-    iv. Datatype – nominal 
+    3) a. Name – county
+       b. Definition – county of residence of person
+       c. Universe – US people in 2014
+       d. Type – basic 
+       e. Value domain
+         i. Name – FIPS county codes
+         ii. Type – enumerated
+         iii. Permissible values
+           1. <001, Autauga county in Alabama>
+           2. <003, Baldwin county in Alabama>
+           3. …
+         iv. Datatype – nominal 
 
-3)
-  a. Name – county
-  b. Definition – county of residence of person
-  c. Universe – US people in 2014
-  d. Type – basic 
-  e. Value domain
-    i. Name – FIPS county codes
-    ii. Type – enumerated
-    iii. Permissible values
-      1. <001, Autauga county in Alabama>
-      2. <003, Baldwin county in Alabama>
-      3. …
-
-    iv. Datatype – nominal 
-
-4)
-  a. Name – income
-  b. Definition – income from all sources for person
-  c. Universe-US people in 2014
-  d. Type – basic 
-  e. Value domain
-    i. Name – monetary amount
-    ii. Type – described
-    iii. Description – non-negative number in Arabic numerals
-
-
+    4) a. Name – income
+       b. Definition – income from all sources for person
+       c. Universe-US people in 2014
+       d. Type – basic 
+       e. Value domain
+         i. Name – monetary amount
+         ii. Type – described
+         iii. Description – non-negative number in Arabic numerals
 
 Here is the description of a table based on these variables:
 
 **Dimensions**
 
-1)  a. Name – sex names
-  b. Definition – Sex of a person
-  c. Type – dimensional 
-  d. Value domain
-    i. Name – sex names
-    ii. Type – enumerated
-    iii. Permissible values
-      1. <male, Male sex>
-      2. <female, Female sex>
-      3. <other, Other – unspecified>
+    1) a. Name – sex names
+       b. Definition – Sex of a person
+       c. Type – dimensional 
+       d. Value domain
+         i. Name – sex names
+         ii. Type – enumerated
+         iii. Permissible values
+           1. <male, Male sex>
+           2. <female, Female sex>
+           3. <other, Other – unspecified>
 
-2)
-  a. Name – state names
-  b. Definition – state of residence of person
-  c. Type – dimensional 
-  d. Value domain
-    i. Name –state names
-    ii. Type – enumerated
-    iii. Permissible values
-      1. <alabama, state of Alabama>
-      2. <alaska, state of Alaska>
-      3. …
+    2) a. Name – state names
+       b. Definition – state of residence of person
+       c. Type – dimensional 
+       d. Value domain
+         i. Name –state names
+         ii. Type – enumerated
+         iii. Permissible values
+           1. <alabama, state of Alabama>
+           2. <alaska, state of Alaska>
+           3. …
 
-3)
-  a. Name – county names
-  b. Definition – county of residence of person
-  c. Type – dimensional
-    i. Sub-dimension to – state names 
-  d. Value domain
-    i. Name – county names
-    ii. Type – enumerated
-    iii. Permissible values
-      1. <Autauga - AL, Autauga county in Alabama>
-      2. < Baldwin - AL, Baldwin county in Alabama>
-      3. …
-
-
+    3) a. Name – county names
+       b. Definition – county of residence of person
+       c. Type – dimensional
+          i. Sub-dimension to – state names 
+       d. Value domain
+          i. Name – county names
+          ii. Type – enumerated
+          iii. Permissible values
+            1. <Autauga - AL, Autauga county in Alabama>
+            2. < Baldwin - AL, Baldwin county in Alabama>
+            3. …
 
 **Cross-tabulated variable**
 
-4)
-  a. Name – income totals
-  b. Definition – income from all sources for person
-  c. Universe – US people in 2014
-  d. Type – cross-tabulated
-    i. Statistic – total 
-    ii. Dimensions
-      1. sex names
-      2. state names
-      3. county names
-  e. Value domain
-    i. Name – monetary amount
-    ii. Type – described
-    iii. Description – non-negative number in Arabic numerals
-    iv. Precision – 2 decimals
-    v. Unit of measure – US dollars
-    vi. Datatype – ratio
+    4) a. Name – income totals
+       b. Definition – income from all sources for person
+       c. Universe – US people in 2014
+       d. Type – cross-tabulated
+         i. Statistic – total 
+         ii. Dimensions
+           1. sex names
+           2. state names
+           3. county names
+       e. Value domain
+         i. Name – monetary amount
+         ii. Type – described
+         iii. Description – non-negative number in Arabic numerals
+         iv. Precision – 2 decimals
+         v. Unit of measure – US dollars
+         vi. Datatype – ratio
