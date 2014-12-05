@@ -1,10 +1,8 @@
-Metadata Schema for Data Dictionaries
+->**Metadata Schema for Data Dictionaries**<-
 
 SCOPE Metadata Group
 
 April 9, 2014
-
-
 
 Background:
 
@@ -14,59 +12,51 @@ Parallel with SCOPE, the White House began an effort to make federal government 
 
 One element in the set of descriptors for a data set is a pointer to a data dictionary, if applicable. This specification is an effort to define the elements needed to describe the contents of a data dictionary.
 
-
-
 Membership:
 
-Dan Gillman (BLS) – chair
++ Dan Gillman (BLS) – chair
 
-Paul Bugg (OMB)
++ Paul Bugg (OMB)
 
-San Cannon (FRB)
++ San Cannon (FRB)
 
-Joe Dalaker (Census)
++ Joe Dalaker (Census)
 
-Mark Elbert (EIA)
++ Mark Elbert (EIA)
 
-Tim Kearley (BJS)
++ Tim Kearley (BJS)
 
-Peter Meyer (BLS)
++ Peter Meyer (BLS)
 
-Mary Moulton (BTS)
++ Mary Moulton (BTS)
 
-Kimberly Noonan (NSF)
++ Kimberly Noonan (NSF)
 
-Bill Savino (Census)
++ Bill Savino (Census)
 
-Marilyn Seastrom (NCES)
++ Marilyn Seastrom (NCES)
 
-Joy Sharp (BTS)
++ Joy Sharp (BTS)
 
-Ann Summa (NASS)
++ Ann Summa (NASS)
 
-Bruce Taylor (NCES)
++ Bruce Taylor (NCES)
 
-Michael Valivullah (NASS)
-
-
++ Michael Valivullah (NASS)
 
 Usage:
 
 In this specification, dimensions for cross-tabulated data are treated as variables. Many other standards and specifications for describing data, such as DDI and SDMX, treat dimensions as separate objects. This decision was made to keep the number of elements to a minimum.
 
-
-
 Notes:
 
-1. 1)An entry in a data dictionary is a description of a variable.
-2. 2)A Value Domain is a set of allowed values for a variable.
-3. 3)Multiplicity tells the reader of this document how many instances of a particular element are allowed in each entry.
-4. 4)All the fields specified below are assumed to be text for human readability. Interoperability and use by automated tools requires new considerations beyond the scope of this document.
-5. 5)Examples are included at the end of this document.
+1) An entry in a data dictionary is a description of a variable.
+2) A **Value Domain** is a set of allowed values for a variable.
+3) Multiplicity tells the reader of this document how many instances of a particular element are allowed in each entry.
+4) All the fields specified below are assumed to be text for human readability. Interoperability and use by automated tools requires new considerations beyond the scope of this document.
+5) Examples are included at the end of this document.
 
-
-
-Definitions:
+**Definitions**:
 
 The definitions below are given to ensure unambiguous interpretation of this specification.
 
@@ -99,12 +89,10 @@ The definitions below are given to ensure unambiguous interpretation of this spe
 | Definition of Variable | Representation of the meaning of a variable by a textual description used to convey its meaning Multiplicity [1..1] | Multiple definitions are permitted if they are in different languages. The assumption is one definition per language. |
 | Type of Variable | The kind of entry providedMultiplicity [1..1] | The allowed values are: Basic, Cross-tabulated, Derived, and Dimensional. |
 | Name of Value Domain | Linguistic expression designating the value domainMultiplicity [1..N] | More than one name is permitted for a value domain. |
-| Type of Value Domain | The kind of value domainMultiplicity [1..1] | Value domains come in 2 types:Enumerated – allowed values are specified as a list using the Permissible Value field belowDescribed – allowed values are specified in a rule or expression using the Description field below |
+| Type of Value Domain | The kind of value domainMultiplicity [1..1] | Value domains come in 2 types:  **Enumerated** – allowed values are specified as a list using the Permissible Value field below.  **Described** – allowed values are specified in a rule or expression using the Description field below |
 | Datatype | Allowed computations (i.e., the computational model) for data under this variableMultiplicity [1..1] | In statistics, the allowed families of datatypes are Text, Nominal, Ordinal, Interval, and Ratio. Additional datatypes may be required to specify other data. |
 
 **Required-if-Applicable Fields**
-
-
 
 | **Field** | **Definition** | **Usage Comments** |
 | --- | --- | --- |
@@ -123,124 +111,119 @@ The definitions below are given to ensure unambiguous interpretation of this spe
 
 Here are 4 variables described as if they are in a microdata file:
 
-1. 1)
-  1. Name – sex
-  2. Definition – Sex of a person
-  3. Universe – US people in 2014
-  4. Type – basic
-  5. Value domain
-    1. Name – sex codes
-    2. Type – enumerated
-    3. Permissible values
+1) a. Name – sex
+  b. Definition – Sex of a person
+  c. Universe – US people in 2014
+  d. Type – basic
+  e. Value domain
+    i. Name – sex codes
+    ii. Type – enumerated
+    iii. Permissible values
       1. <m, Male sex>
       2. <f, Female sex>
       3. <o, Other – unspecified>
 
-    4. Datatype – nominal 
+    iv. Datatype – nominal 
 
-2. 2)
-  1. Name – state
-  2. Definition – state of residence of person
-  3. Universe – US people in 2014
-  4. Type – basic 
-  5. Value domain
-    1. Name – postal state codes
-    2. Type – enumerated
-    3. Permissible values
+2) a. Name – state
+  b. Definition – state of residence of person
+  c. Universe – US people in 2014
+  d. Type – basic 
+  e. Value domain
+    i. Name – postal state codes
+    ii. Type – enumerated
+    iii. Permissible values
       1. <AL, state of Alabama>
       2. <AK, state of Alaska>
       3. …
 
-    4. Datatype – nominal 
+    iv. Datatype – nominal 
 
-1. 3)
-  1. Name – county
-  2. Definition – county of residence of person
-  3. Universe – US people in 2014
-  4. Type – basic 
-  5. Value domain
-    1. Name – FIPS county codes
-    2. Type – enumerated
-    3. Permissible values
+3)
+  a. Name – county
+  b. Definition – county of residence of person
+  c. Universe – US people in 2014
+  d. Type – basic 
+  e. Value domain
+    i. Name – FIPS county codes
+    ii. Type – enumerated
+    iii. Permissible values
       1. <001, Autauga county in Alabama>
       2. <003, Baldwin county in Alabama>
       3. …
 
-    4. Datatype – nominal 
+    iv. Datatype – nominal 
 
-1. 4)
-  1. Name – income
-  2. Definition – income from all sources for person
-  3. Universe-US people in 2014
-  4. Type – basic 
-  5. Value domain
-    1. Name – monetary amount
-    2. Type – described
-    3. Description – non-negative number in Arabic numerals
+4)
+  a. Name – income
+  b. Definition – income from all sources for person
+  c. Universe-US people in 2014
+  d. Type – basic 
+  e. Value domain
+    i. Name – monetary amount
+    ii. Type – described
+    iii. Description – non-negative number in Arabic numerals
 
 
 
 Here is the description of a table based on these variables:
 
-Dimensions
+**Dimensions**
 
-1. 1)
-  1. Name – sex names
-  2. Definition – Sex of a person
-  3. Type – dimensional 
-  4. Value domain
-    1. Name – sex names
-    2. Type – enumerated
-    3. Permissible values
+1)  a. Name – sex names
+  b. Definition – Sex of a person
+  c. Type – dimensional 
+  d. Value domain
+    i. Name – sex names
+    ii. Type – enumerated
+    iii. Permissible values
       1. <male, Male sex>
       2. <female, Female sex>
       3. <other, Other – unspecified>
 
-1. 2)
-  1. Name – state names
-  2. Definition – state of residence of person
-  3. Type – dimensional 
-  4. Value domain
-    1. Name –state names
-    2. Type – enumerated
-    3. Permissible values
+2)
+  a. Name – state names
+  b. Definition – state of residence of person
+  c. Type – dimensional 
+  d. Value domain
+    i. Name –state names
+    ii. Type – enumerated
+    iii. Permissible values
       1. <alabama, state of Alabama>
       2. <alaska, state of Alaska>
       3. …
 
-1. 3)
-  1. Name – county names
-  2. Definition – county of residence of person
-  3. Type – dimensional
-    1. Sub-dimension to – state names 
-
-  4. Value domain
-    1. Name – county names
-    2. Type – enumerated
-    3. Permissible values
+3)
+  a. Name – county names
+  b. Definition – county of residence of person
+  c. Type – dimensional
+    i. Sub-dimension to – state names 
+  d. Value domain
+    i. Name – county names
+    ii. Type – enumerated
+    iii. Permissible values
       1. <Autauga - AL, Autauga county in Alabama>
       2. < Baldwin - AL, Baldwin county in Alabama>
       3. …
 
 
 
-Cross-tabulated variable
+**Cross-tabulated variable**
 
-1. 4)
-  1. Name – income totals
-  2. Definition – income from all sources for person
-  3. Universe – US people in 2014
-  4. Type – cross-tabulated
-    1. Statistic – total 
-    2. Dimensions
+4)
+  a. Name – income totals
+  b. Definition – income from all sources for person
+  c. Universe – US people in 2014
+  d. Type – cross-tabulated
+    i. Statistic – total 
+    ii. Dimensions
       1. sex names
       2. state names
       3. county names
-
-  5. Value domain
-    1. Name – monetary amount
-    2. Type – described
-    3. Description – non-negative number in Arabic numerals
-    4. Precision – 2 decimals
-    5. Unit of measure – US dollars
-    6. Datatype – ratio
+  e. Value domain
+    i. Name – monetary amount
+    ii. Type – described
+    iii. Description – non-negative number in Arabic numerals
+    iv. Precision – 2 decimals
+    v. Unit of measure – US dollars
+    vi. Datatype – ratio
