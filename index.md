@@ -1,8 +1,5 @@
 ---
-published: true
-permalink: /
 layout: default
-filename: index.md
 title: Metadata Schema for Data Dictionaries
 ---
 
