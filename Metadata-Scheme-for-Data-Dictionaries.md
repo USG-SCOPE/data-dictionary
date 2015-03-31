@@ -2,7 +2,7 @@
 
 SCOPE Metadata Group
 
-April 9, 2014
+Jan 16, 2015, draft 1.01
 
 ### Background
 
@@ -61,7 +61,11 @@ The definitions below are given to ensure unambiguous interpretation of this spe
 13. Value domain: enumerated – Value domain for which the allowed values are given as a list
 14. Value domain: described – Value domain for which the allowed values are delineated by description
 15. Variable – Map from the elements of a Universe to the elements of a Value Domain, where for each element of the Universe at most one element of the Value Domain is assigned 
-
+16. The nominal datatype contains a finite number of categories and the list of those categories is not naturally ordered.  Examples: sex, marital status, or the set of categories at a level of NAICS or SOC.
+17. The ordinal datatype contains a finite number of categories and the list of those categories has a defined order. Examples are preference scales, age ranges, income ranges, or educational attainment.
+18. The interval datatype is for quantitative data for which it is meaningful to take differences but not to multiply by scalars.  Examples: temperature measured in Celsius or Fahrenheit; or age in years.
+19. The ratio datatype is for quantitative data for which scalar multiplication is meaningful. Most quantitative measures are ratio data, such as economic indexes, and temperatures measured in Kelvin. (Absolute zero is 0K, and 50K is twice as warm as 25K.)
+20. The text datatype is for free form strings, and is the datatype to use when the others do not apply. For text data, there is often no limit t othe number of values that are acceptable, no standard category system, and there are no arithmetic operations.  Examples include names of people or organizations. Data can be put in text-data fields, and if they are formatted as yyyy-mm-dd they will sort alphabetically.
 
 
 ## Required Fields
