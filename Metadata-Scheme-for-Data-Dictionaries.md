@@ -2,7 +2,7 @@
 
 SCOPE Metadata Group
 
-July 31, 2015, draft 1.012
+July 31, 2015, draft 1.02
 
 ### Background
 
