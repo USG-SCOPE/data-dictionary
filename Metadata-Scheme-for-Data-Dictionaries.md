@@ -2,7 +2,7 @@
 
 SCOPE Metadata Group
 
-Jan 16, 2015, draft 1.01
+July 31, 2015, draft 1.012
 
 ### Background
 
@@ -149,7 +149,7 @@ Here are 4 variables described as if they are in a microdata file:
          ii. Type – described
          iii. Description – non-negative number in Arabic numerals
 
-Here is the description of a table based on these variables:
+Here is the description of a cube on these variables:
 
 **Dimensions**
 
