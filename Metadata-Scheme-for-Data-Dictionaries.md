@@ -66,7 +66,7 @@ The definitions below are given to ensure unambiguous interpretation of this spe
 17. The **ordinal** datatype contains a finite number of categories and the list of those categories has a defined order. Examples are preference scales, age ranges, income ranges, or educational attainment.
 18. The **interval** datatype is for quantitative data for which it is meaningful to take differences but not to multiply by scalars.  Examples: temperature measured in Celsius or Fahrenheit; or age in years.
 19. The **ratio** datatype is for quantitative data for which scalar multiplication is meaningful. Most quantitative measures are ratio data, such as economic indexes, and temperatures measured in Kelvin. (Absolute zero is 0K, and 50K is twice as warm as 25K.)
-20. The **text** datatype is for free form strings, and is the datatype to use when the others do not apply. For text data, there is often no limit t othe number of values that are acceptable, no standard category system, and there are no arithmetic operations.  Examples include names of people or organizations. Data can be put in text-data fields, and if they are formatted as yyyy-mm-dd they will sort alphabetically.
+20. The **text** datatype is for free form strings, and is the datatype to use when the others do not apply. For text data, there is often no limit to the number of values that are acceptable, no standard category system, and there are no arithmetic operations.  Examples include names of people or organizations. Data can be put in text-data fields, and if they are formatted as yyyy-mm-dd they will sort alphabetically.
 
 
 ## Required Fields
